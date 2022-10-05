@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>Snap.Hutao.Service.Game.Unlocker</Title>
+    <Authors>DGP Studio</Authors>
+    <Company>DGP Studio</Company>
+    <Product>Snap Hutao</Product>
+    <Description>原神帧率解锁</Description>
+    <Copyright>© 2022 DGP Studio</Copyright>
+    <PackageProjectUrl>https://github.com/DGP-Studio/Unlocker</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/DGP-Studio/Unlocker</RepositoryUrl>
+    <PackageTags>genshin</PackageTags>
+    <Platforms>AnyCPU;x64</Platforms>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Windows.CsWin32" Version="0.2.63-beta">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="StyleCop.Analyzers.Unstable" Version="1.2.0.435">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EditorConfigFiles Remove="D:\Develop\Projects\Unlocker\src\Snap.Hutao.Service.Game.Unlocker\Snap.Hutao.Service.Game.Unlocker\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="D:\Develop\Projects\Unlocker\src\Snap.Hutao.Service.Game.Unlocker\Snap.Hutao.Service.Game.Unlocker\.editorconfig" />
+  </ItemGroup>
+
+</Project>
