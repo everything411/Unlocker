@@ -6,7 +6,7 @@ namespace Snap.Hutao.Service.Game.Unlocker;
 /// <summary>
 /// 游戏帧率解锁器
 /// </summary>
-internal interface IGameFpsUnlocker
+public interface IGameFpsUnlocker
 {
     /// <summary>
     /// 目标FPS,设置以动态更改帧率
