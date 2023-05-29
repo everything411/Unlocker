@@ -1,7 +1,11 @@
 ﻿// Copyright (c) DGP Studio. All rights reserved.
 // Licensed under the MIT license.
 
+using System.Runtime.CompilerServices;
+using System.Runtime.Versioning;
+using Windows.Win32.Foundation;
 using Windows.Win32.System.Diagnostics.ToolHelp;
+using static Windows.Win32.PInvoke;
 
 namespace Snap.Hutao.Service.Game.Unlocker;
 
@@ -20,12 +24,23 @@ internal static class StructMarshal
     }
 
     /// <summary>
-    /// 判断结构实例是否为默认结构
+    /// 枚举快照的模块
     /// </summary>
-    /// <param name="moduleEntry32">待测试的结构</param>
-    /// <returns>是否为默认结构</returns>
-    public static bool IsDefault(MODULEENTRY32 moduleEntry32)
+    /// <param name="snapshot">快照</param>
+    /// <returns>模块枚举</returns>
+    [SupportedOSPlatform("windows5.1.2600")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static IEnumerable<MODULEENTRY32> EnumerateModuleEntry32(HANDLE snapshot)
     {
-        return moduleEntry32.dwSize == 0;
+        MODULEENTRY32 entry = MODULEENTRY32();
+
+        if (Module32First(snapshot, ref entry))
+        {
+            do
+            {
+                yield return entry;
+            }
+            while (Module32Next(snapshot, ref entry));
+        }
     }
 }

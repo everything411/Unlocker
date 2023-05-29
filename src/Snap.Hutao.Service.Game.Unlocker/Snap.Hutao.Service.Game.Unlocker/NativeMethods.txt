@@ -4,3 +4,5 @@ Module32First
 Module32Next
 ReadProcessMemory
 WriteProcessMemory
+VirtualAlloc
+VirtualFree
