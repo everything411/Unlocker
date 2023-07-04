@@ -59,6 +59,6 @@ unlocker.TargetFps = 120;
 ## Implementation Detail
 
 The unlocker runs a loop internally to keep track with the FPS memory location for the UnityPlayer.dll.  
-Which deal a bit performance impact for the user.  
+This deals a bit performance impact for the user.  
 
-So adjust operation is not recommand to set too frequently.
+So `adjust` operation is not recommended to set too frequently.
